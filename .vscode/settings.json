@@ -1,0 +1,19 @@
+{
+  "eslint.alwaysShowStatus": true,
+  "eslint.workingDirectories": [
+  
+  ],
+  "eslint.validate": [
+  
+  ],
+  "eslint.useESLintClass": false,
+  "eslint.trace.server": "off",
+  "eslint.rules.customizations": [
+  
+  ],
+  "eslint.options": {
+  
+  },
+  "eslint.format.enable": true,
+  "eslint.codeActionsOnSave.rules": null
+}
