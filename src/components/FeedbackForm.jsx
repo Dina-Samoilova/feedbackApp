@@ -21,10 +21,12 @@ export const FeedbackForm = () => {
   }, [feedbackEdit]);
 
   const handleTextChange = (event) => {
-    if (text === '') {
+    const { value } = event.target;
+  
+    if (value === '') {
       setBtnDisabled(true);
       setMessage(null);
-    } else if (text !== '' && text.trim().length <= 10) {
+    } else if (value.trim().length < 10) {
       setMessage('Text must be at least 10 characters');
       setBtnDisabled(true);
     } else {
@@ -32,7 +34,7 @@ export const FeedbackForm = () => {
       setBtnDisabled(false);
     }
 
-    setText(event.target.value);
+    setText(value);
   };
 
   const handleSubmit = (event) => {
@@ -52,6 +54,7 @@ export const FeedbackForm = () => {
 
       setText('');
       setBtnDisabled(true);
+      setRating(10);
     }
   };
 
@@ -60,7 +63,7 @@ export const FeedbackForm = () => {
       <form onSubmit={handleSubmit}>
         <h2>How would you rate your service with us?</h2>
 
-        <RatingSelect select={(rating) => setRating(rating)} />
+        <RatingSelect select={setRating} selected={rating} />
         <div className="input-group">
           <input
             type="text"

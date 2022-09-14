@@ -5,11 +5,9 @@ export const FeedbackStats = () => {
   const { feedback } = useContext(FeedbackContext);
 
   // Calculate rating average
-  let average = feedback.reduce((acc, cur) => {
+  let average = Math.round(feedback.reduce((acc, cur) => {
     return acc + cur.rating
-  }, 0) / feedback.length;
-
-  average = average.toFixed(1).replace(/[.,]0$/, '');
+  }, 0) / feedback.length);
 
   return (
     <div className='feedback-stats'>
