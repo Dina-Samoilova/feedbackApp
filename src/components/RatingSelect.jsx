@@ -1,5 +1,4 @@
 import React from 'react';
-import FeedbackContext from '../context/FeedbackContext';
 
 export const RatingSelect = ({ select, selected }) => {
   const handleChange = (event) => {
